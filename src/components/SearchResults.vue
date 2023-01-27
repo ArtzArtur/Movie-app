@@ -6,7 +6,11 @@
     <div v-if="error">
       {{ error }}
   </div>
-    <div v-for="movie in movies" :key="movie.imdbID" class=" text-center m-2 flex flex-col justify-between max-w-[230px]" :class="[movie.Poster==='N/A' ? 'hidden' : null]" >
+  
+  <div v-for="movie in movies" :key="movie.imdbID" class=" text-center m-2 flex flex-col justify-between max-w-[230px]" :class="[movie.Poster==='N/A' ? 'hidden' : null]" >
+      <router-link :to="{name:'MovieDetails',params:{
+        id:movie.imdbID
+      }}">
       <div>
         <p>{{ movie.Title}}</p>
         <p>{{ movie.Year}}</p>
@@ -14,8 +18,9 @@
       <img :src="movie.Poster" class=" mx-auto block w-[230px] h-[330px]" alt="movie poster">
       
       
+    </router-link>
     </div>
-
+    
   </section>
 </template>
 

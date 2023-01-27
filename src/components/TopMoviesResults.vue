@@ -20,9 +20,8 @@
 <script setup>
 import { ref } from 'vue';
 import useFetch from './services/useFetch';
-const apiKey = "k_298l3iep"
+const apiKey = import.meta.env.VITE_TOP_APIKEY
 const url = `https://imdb-api.com/en/API/MostPopularMovies/${apiKey}`
-const test = ref("my test")
 const { data:movies, loading:moviesLoad, error, fetchData } = useFetch(url)
 // await fetchData();
 
