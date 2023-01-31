@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <header>
       <Home />
     </header>
@@ -8,7 +8,7 @@
         <component :is="Component" :key="$route.path"/>
       </transition>
     </router-view>
-  </div>
+  </main>
 </template>
 
 <script setup>

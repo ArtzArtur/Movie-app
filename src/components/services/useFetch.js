@@ -4,6 +4,7 @@ export default function useFetch(url){
 const data = ref(null)
 const error = ref(null)
 const loading = ref(false)
+
 loading.value = true
 
 const fetchData = async() => {
@@ -13,8 +14,9 @@ const fetchData = async() => {
       error.value = 'Cannot fetch data'
     }
     data.value = await resp.json()
-    if(data.value.errorMessage){
-      error.value = new Error(data.value.errorMessage)
+    console.log(data.value.Response)
+    if(data.value.Response==="False"){
+      throw new Error(data.value.Error)
     }
   } catch(err){
     error.value = err

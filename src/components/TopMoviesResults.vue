@@ -1,7 +1,7 @@
 <template>
   <section>
     <div v-if="moviesLoad">
-      loading....
+      <Loader />  
     </div>
     <div v-if="error">
       {{ error }}
@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import Loader from './Loader.vue';
 import useFetch from './services/useFetch';
 const apiKey = import.meta.env.VITE_TOP_APIKEY
 const url = `https://imdb-api.com/en/API/MostPopularMovies/${apiKey}`
