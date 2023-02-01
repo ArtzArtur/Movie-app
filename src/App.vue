@@ -5,14 +5,16 @@
     </header>
     <router-view v-slot="{ Component }" >
       <transition name="fade" mode="out-in" >
+        <KeepAlive include="TheSearch,TopMovies,TopSeries">
         <component :is="Component" :key="$route.path"/>
+        </KeepAlive>
       </transition>
     </router-view>
   </main>
 </template>
 
 <script setup>
-import Home from './components/Home.vue'
+import Home from './views/Home.vue'
 </script>
 
 <style>

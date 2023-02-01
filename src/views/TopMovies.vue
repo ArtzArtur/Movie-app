@@ -3,10 +3,10 @@
     <div>
       <Suspense>
         <template #default>
-          <TopMoviesResults />
+          <TopResults :url="url" />
         </template>
         <template #fallback>
-          Loading....
+          <Loader />
         </template>
 
       </Suspense>
@@ -16,10 +16,8 @@
 </template>
 
 <script setup>
-import TopMoviesResults from "../components/TopMoviesResults.vue"
-
+import Loader from '../components/Loader.vue'
+import TopResults from "../components/TopResults.vue"
+const apiKey = import.meta.env.VITE_IMDB_APIKEY
+const url = `https://imdb-api.com/en/API/Top250Movies/${apiKey}`
 </script>
-
-<style lang="scss" scoped>
-
-</style>

@@ -3,7 +3,7 @@
     <form 
     @submit.prevent="search"
     class="min-h-[200px] bg-blue-100 grid place-content-center">
-      <input placeholder="Movie title" type="text" class="p-2 rounded-md mb-2" v-model="searchedMovie">
+      <input placeholder="Movie title" type="text" class="p-2 rounded-md mb-2 focus:outline-blue-300" v-model="searchedMovie">
       <button
       class="p-1 shadow-[0px_0px_2px_#000] w-24 mx-auto bg-blue-50 hover:bg-black hover:text-white">Search</button>
     </form>

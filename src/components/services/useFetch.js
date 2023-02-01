@@ -18,6 +18,9 @@ const fetchData = async() => {
     if(data.value.Response==="False"){
       throw new Error(data.value.Error)
     }
+    else if(data.value.errorMessage){
+      throw new Error(data.value.errorMessage)
+    }
   } catch(err){
     error.value = err
   }

@@ -7,7 +7,6 @@
       <Loader />
     </div>
     <div v-for="movie in movies" :key="movie.imdbID">
-      
       <MovieCard :movie="movie" />
     </div>
   </section>
@@ -16,6 +15,7 @@
 <script setup>
 import Loader from './Loader.vue';
 import MovieCard from './MovieCard.vue';
+
 const props = defineProps({
   loading: Boolean,
   error:  null,
