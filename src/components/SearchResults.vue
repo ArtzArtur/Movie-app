@@ -15,7 +15,6 @@
 <script setup>
 import Loader from './Loader.vue';
 import MovieCard from './MovieCard.vue';
-
 const props = defineProps({
   loading: Boolean,
   error:  null,

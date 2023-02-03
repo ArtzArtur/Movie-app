@@ -14,7 +14,6 @@ const fetchData = async() => {
       error.value = 'Cannot fetch data'
     }
     data.value = await resp.json()
-    console.log(data.value.Response)
     if(data.value.Response==="False"){
       throw new Error(data.value.Error)
     }

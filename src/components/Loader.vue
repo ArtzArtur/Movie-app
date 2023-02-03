@@ -24,9 +24,6 @@
       opacity:1;
     }
   }
-.dot{
-  animation: ;
-}
   .dot:nth-child(0){
     animation-delay:0s;
   }
