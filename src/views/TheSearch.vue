@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form @submit.prevent="search" class="min-h-[200px] bg-blue-100 grid place-content-center">
+    <form @submit.prevent="search(page=1)" class="min-h-[200px] bg-blue-100 grid place-content-center">
       <input placeholder="Movie title" type="text" class="p-2 rounded-md mb-2 focus:outline-blue-300"
         v-model="searchedMovie">
       <button
