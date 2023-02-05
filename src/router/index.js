@@ -6,23 +6,23 @@ import TopSeries from '../views/TopSeries.vue'
 
 const routes = [
   {
-    path: '/TopMovies',
+    path: '/movie-app/TopMovies',
     name: 'TopMovies',
     component: TopMovies
   },
   {
-    path: '/',
+    path: '/movie-app',
     name: 'TheSearch',
     component: TheSearch
   },
   {
-    path: '/MovieDetails/:id',
+    path: '/movie-app/MovieDetails/:id',
     name: 'MovieDetails',
     component: MovieDetails,
     props: true
   },
   {
-    path: '/TopSeries',
+    path: '/movie-app/TopSeries',
     name: 'TopSeries',
     component:TopSeries
   }
