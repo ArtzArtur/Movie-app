@@ -3,7 +3,7 @@ import TopMovies from '../views/TopMovies.vue'
 import TheSearch from '../views/TheSearch.vue'
 import MovieDetails from '../views/MovieDetails.vue'
 import TopSeries from '../views/TopSeries.vue'
-
+import Favorites from '../views/Favorites.vue'
 const routes = [
   {
     path: '/movie-app/TopMovies',
@@ -11,7 +11,7 @@ const routes = [
     component: TopMovies
   },
   {
-    path: '/movie-app',
+    path: '/movie-app/',
     name: 'TheSearch',
     component: TheSearch
   },
@@ -25,6 +25,11 @@ const routes = [
     path: '/movie-app/TopSeries',
     name: 'TopSeries',
     component:TopSeries
+  },
+  {
+    path: '/movie-app/Favorites',
+    name: 'Favorites',
+    component:Favorites
   }
 ]
 

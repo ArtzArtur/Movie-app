@@ -6,17 +6,17 @@
     <div class="grid" v-if="data">
       
       <div v-for="item in data.items.slice(start,end)" :key="item.id" >
-          <router-link ref="infiniteLoader" class=" text-center grid sm:grid-cols-[0.4fr,1fr] max-w-[650px] w-[80vw] mx-auto shadow-[1px_1px_3px_#999996] m-2"
+          <router-link ref="infiniteLoader" class=" text-center grid sm:grid-cols-[1fr,1fr] max-w-[450px] w-[40vw] mx-auto shadow-[1px_1px_3px_#999996] m-2"
           :to="{name:'MovieDetails',params:{
             id:item.id
           }}">
           <div class="flex items-center justify-center bg-slate-100 p-2">
-          <p class="sm:text-[7.5rem] text-[3rem] text-center font-semibold  text-slate-700">
+          <p class="sm:text-[4.5rem] text-[3rem] text-center font-semibold  text-slate-700">
             {{ item.rank}}
           </p>
         </div>
-        <div>
-          <header class="p-4">
+        <div class="py-4">
+          <header>
             <p class="text-lg">
               {{ item.fullTitle }}
             </p>

@@ -15,6 +15,11 @@
 
 <script setup>
 import Home from './views/Home.vue'
+import store from './store/FavoritesStore.js'
+import { provide } from 'vue';
+
+provide('store',store)
+
 </script>
 
 <style>
