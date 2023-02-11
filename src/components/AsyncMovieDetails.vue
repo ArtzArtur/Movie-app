@@ -32,6 +32,8 @@
 </template>
 
 <script setup>
+import HandleFav from './handleFav.vue';
+
 const props = defineProps({
   id: String
 })

@@ -5,7 +5,7 @@
     </header>
     <router-view v-slot="{ Component }" >
       <transition name="fade" mode="out-in" >
-        <KeepAlive include="TheSearch,TopMovies,TopSeries">
+        <KeepAlive>
         <component :is="Component" :key="$route.path"/>
         </KeepAlive>
       </transition>
@@ -14,8 +14,14 @@
 </template>
 
 <script setup>
+import { provide,ref } from 'vue';
 import Home from './views/Home.vue'
+
+const favorites = ref([])
+provide('favorites',favorites.value)
+
 </script>
+
 
 <style>
 
