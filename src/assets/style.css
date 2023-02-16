@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav-icon{
+  @apply text-3xl transform cursor-pointer transition-transform sm:hidden absolute right-4 top-1/2 -translate-y-1/2 z-50 
+}
+.nav-bar{
+  @apply h-[50vh] absolute flex flex-col justify-evenly left-0 w-full bg-white opacity-0 pointer-events-none transition-opacity sm:static sm:justify-around sm:h-auto sm:opacity-100 sm:flex-row sm:pointer-events-auto
+}
