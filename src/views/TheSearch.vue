@@ -28,11 +28,11 @@
 </template>
 
 <script setup>
-import { ref, reactive, toRefs } from 'vue';
+import { ref, reactive, toRefs, inject } from 'vue';
 import useFetch from '../components/services/useFetch';
 import SearchResults from '../components/SearchResults.vue';
 
-
+const store = inject('store')
 const apiKey = import.meta.env.VITE_SEARCH_APIKEY
 const searchedMovie = ref()
 const page = ref(1)
@@ -48,8 +48,13 @@ const search = async() => {
   const { data, error, fetchData } = useFetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${searchedMovie.value}&page=${page.value}`)
   state.error = null
   await fetchData()
+
+console.log(data.value.Search)
+
   if(data.value.Search && data.value.totalResults){
-  state.movies = data.value.Search
+    data.value.Search.forEach(movie=>movie.isFav=false)
+    state.movies = data.value.Search
+    store.state.favorites = data.value.Search
   data.value.Search.total = Math.ceil(data.value.totalResults / 10)
   }
   state.error = error

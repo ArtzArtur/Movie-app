@@ -3,17 +3,17 @@ import TopMovies from '../views/TopMovies.vue'
 import TheSearch from '../views/TheSearch.vue'
 import MovieDetails from '../views/MovieDetails.vue'
 import TopSeries from '../views/TopSeries.vue'
-import Favorites from '../views/Favorites.vue'
+import TheFavorites from '../views/TheFavorites.vue'
 const routes = [
-  {
-    path: '/movie-app/TopMovies',
-    name: 'TopMovies',
-    component: TopMovies
-  },
   {
     path: '/movie-app/',
     name: 'TheSearch',
     component: TheSearch
+  },
+  {
+    path: '/movie-app/TopMovies',
+    name: 'TopMovies',
+    component: TopMovies
   },
   {
     path: '/movie-app/MovieDetails/:id',
@@ -27,9 +27,9 @@ const routes = [
     component:TopSeries
   },
   {
-    path: '/movie-app/Favorites',
-    name: 'Favorites',
-    component:Favorites
+    path: '/movie-app/TheFavorites',
+    name: 'TheFavorites',
+    component:TheFavorites
   }
 ]
 

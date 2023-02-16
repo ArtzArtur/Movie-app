@@ -13,8 +13,11 @@
 </template>
 
 <script setup>
+import { inject } from 'vue';
 import Loader from './Loader.vue';
 import MovieCard from './MovieCard.vue';
+
+const store = inject('store')
 const props = defineProps({
   loading: Boolean,
   error:  null,

@@ -5,7 +5,7 @@
     </header>
     <router-view v-slot="{ Component }" >
       <transition name="fade" mode="out-in" >
-        <KeepAlive include="TheSearch,TopMovies,TopSeries">
+        <KeepAlive>
         <component :is="Component" :key="$route.path"/>
         </KeepAlive>
       </transition>

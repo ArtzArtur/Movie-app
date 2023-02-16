@@ -1,7 +1,7 @@
 <template>
   <div class="grid bg-slate-200 p-4 md:grid-cols-2 w-3/4 mx-auto">
     <img :src="movie.Poster" alt="movie poster" class="mb-4 justify-self-center md:m-0">
-    <section class="text-center mx-auto grid ">
+    <section class="text-center mx-auto grid">
       <h1 class="p-2 text-center text-3xl font-bold md:col-span-full grid place-content-center">{{ movie.Title }}</h1>
       <p :class="[
         movie.imdbRating > 8 ? 'bg-green-500' :
@@ -39,4 +39,5 @@ const apiKey = import.meta.env.VITE_SEARCH_APIKEY
 
 const response = await fetch(`http://www.omdbapi.com/?apikey=${apiKey}&i=${props.id}`)
 const movie = await response.json()
+console.log(movie)
 </script>

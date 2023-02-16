@@ -1,8 +1,7 @@
 <template>
   <div>
-    <i 
-    @click="$router.go(-1)"
-    class="fa fa-arrow-left pl-8 md:pl-16 hover:transform hover:scale-[1.1] cursor-pointer"></i>
+    <back-btn />
+    <button class="block mx-auto">Add</button>
       <div>
         <Suspense>
           <template #default>
@@ -18,13 +17,10 @@
 
 <script setup>
 import AsyncMovieDetails from '../components/AsyncMovieDetails.vue'
+import BackBtn from '../components/BackBtn.vue'
 import Loader from '../components/Loader.vue';
 const props = defineProps({
   id:String
 })
 
 </script>
-
-<style lang="scss" scoped>
-
-</style>
