@@ -1,7 +1,6 @@
 <template>
   <div>
     <back-btn />
-    <button class="block mx-auto">Add</button>
       <div>
         <Suspense>
           <template #default>

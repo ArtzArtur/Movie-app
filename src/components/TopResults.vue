@@ -39,6 +39,7 @@ const { data, error, fetchData } = useFetch(props.url)
 await fetchData();
 data.value.items.forEach(element => {
   element.isFav=false
+  store.state.favorites.push(element)
 });
 const changePage = (val) => {
   if(val==="+"){

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class=" text-center grid min-w-[250px] max-w-[450px] mx-auto shadow-[1px_1px_3px_#999996] m-2">
-      <button @click="movie.movie.isFav=!movie.movie.isFav">Click</button>
+      <button class="p-2" @click="movie.movie.isFav=!movie.movie.isFav">{{ !movie.movie.isFav ? 'Add to favorite' : 'Remove from favorite' }}</button>
       <router-link 
       :to="{name:'MovieDetails',params:{
         id:movie.movie.id
@@ -13,9 +13,6 @@
     </div>
     <div class="py-4">
       <header>
-        <p class="text-lg">
-          {{ movie.movie.isFav }}
-        </p>
         <p class="text-lg">
           {{ movie.movie.fullTitle }}
         </p>

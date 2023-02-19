@@ -49,15 +49,14 @@ const search = async() => {
   state.error = null
   await fetchData()
 
-console.log(data.value.Search)
 
   if(data.value.Search && data.value.totalResults){
     data.value.Search.forEach(movie=>movie.isFav=false)
     state.movies = data.value.Search
-    store.state.favorites = data.value.Search
-  data.value.Search.total = Math.ceil(data.value.totalResults / 10)
+    data.value.Search.total = Math.ceil(data.value.totalResults / 10)
   }
   state.error = error
   state.loading = false
+  
 }
 </script>

@@ -1,7 +1,6 @@
 <template>
   <div :class="[movie.Poster === 'N/A' ? 'hidden' : null]"
     class="text-center m-2 flex flex-col max-w-[230px] shadow-md p-2 hover:shadow-[0px_0px_1px_#000]">
-    <HandleFav :movie="movie" />
     <router-link :to="{
       name: 'MovieDetails', params: {
         id: movie.imdbID

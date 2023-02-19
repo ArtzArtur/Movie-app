@@ -6,13 +6,13 @@
         :key="fav.imdbID">
         <router-link :to="{
           name: 'MovieDetails', params: {
-            id: fav.imdbID
+            id: fav.id
           }
         }">
           <p>
-            {{ fav.Title }}
+            {{ fav.title }}
           </p>
-          <img :src="fav.Poster" class="h-[300px]" alt="movie poster">
+          <img :src="fav.image" class="h-[300px]" alt="movie poster">
         </router-link>
         <button class="block p-2 mx-auto shadow-mx text-red-500 hover:text-red-200" @click="fav.isFav = !fav.isFav">
           Remove
@@ -28,9 +28,10 @@ import BackBtn from '../components/BackBtn.vue';
 
 const store = inject('store')
 const favorites = computed(() => {
-  return store.state.favorites.filter(a => { return a.isFav })
+  return store.state.favorites.filter(fav=>{
+    return fav.isFav
+  })
 })
-watchEffect(() => favorites)
 </script>
 
 <style lang="scss" scoped>
