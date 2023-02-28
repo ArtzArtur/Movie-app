@@ -5,6 +5,9 @@
         v-model="searchedMovie">
       <button
         class="p-1 shadow-[0px_0px_2px_#000] w-24 mx-auto bg-blue-50 hover:bg-black hover:text-white">Search</button>
+        <div v-if="minChars" class="relative">
+          <span class="text-red-600 p-2 absolute top-0 left-0 text-center text-sm">Minimum 3 chars required</span>
+        </div>
     </form>
     <div>
       <SearchResults :movies="movies" :loading="loading" :error="error" />
@@ -36,6 +39,7 @@ import SearchResults from '../components/SearchResults.vue';
 const apiKey = import.meta.env.VITE_SEARCH_APIKEY
 const searchedMovie = ref()
 const page = ref(1)
+const minChars = ref(false)
 const state = reactive({
   movies: null,
   loading: null,
@@ -43,6 +47,8 @@ const state = reactive({
 })
 const { movies, loading, error } = toRefs(state)
 const search = async() => {
+  if(searchedMovie.value.trim().length>2){
+  minChars.value = false
   state.loading = true
   state.error, state.movies = null
   const { data, error, fetchData } = useFetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${searchedMovie.value}&page=${page.value}`)
@@ -52,7 +58,11 @@ const search = async() => {
   state.movies = data.value.Search
   data.value.Search.total = Math.ceil(data.value.totalResults / 10)
   }
+  console.log(movies)
   state.error = error
   state.loading = false
+}else{
+  minChars.value = true
+}
 }
 </script>

@@ -11,16 +11,16 @@
             id:item.id
           }}">
           <div class="flex items-center justify-center bg-slate-100 p-2">
-          <p class="sm:text-[7.5rem] text-[3rem] text-center font-semibold  text-slate-700">
+          <p class="sm:text-[7.5rem] text-[3.5rem] text-center font-bold  text-slate-700">
             {{ item.rank}}
           </p>
         </div>
         <div>
           <header class="p-4">
-            <p class="text-lg">
+            <p class="text-2xl">
               {{ item.fullTitle }}
             </p>
-            <p>
+            <p class="m-2 bg-slate-800 text-white p-2 text-xl inline-block rounded-xl">
               Rating: {{ item.imDbRating }}
             </p>
           </header>
