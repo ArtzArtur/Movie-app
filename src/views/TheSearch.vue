@@ -51,7 +51,7 @@ const search = async() => {
   minChars.value = false
   state.loading = true
   state.error, state.movies = null
-  const { data, error, fetchData } = useFetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${searchedMovie.value}&page=${page.value}`)
+  const { data, error, fetchData } = useFetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${searchedMovie.value}&page=${page.value}`)
   state.error = null
   await fetchData()
   if(data.value.Search && data.value.totalResults){

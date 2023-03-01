@@ -38,6 +38,6 @@ const props = defineProps({
 })
 const apiKey = import.meta.env.VITE_SEARCH_APIKEY
 
-const response = await fetch(`http://www.omdbapi.com/?apikey=${apiKey}&i=${props.id}`)
+const response = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&i=${props.id}`)
 const movie = await response.json()
 </script>
