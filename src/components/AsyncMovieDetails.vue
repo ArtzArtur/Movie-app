@@ -1,6 +1,7 @@
 <template>
   <div class="grid bg-slate-200 p-4 md:grid-cols-2 w-3/4 mx-auto">
-    <img :class="[movie.Poster==='N/A' ? 'hidden':null]" :src="movie.Poster" alt="movie poster" class="mb-4 justify-self-center md:m-0">
+    <img :class="[movie.Poster === 'N/A' ? 'hidden' : null]" :src="movie.Poster" alt="movie poster"
+      class="mb-4 justify-self-center md:m-0">
     <section class="text-center mx-auto grid ">
       <h1 class="p-2 text-center text-3xl font-bold md:col-span-full grid place-content-center">{{ movie.Title }}</h1>
       <p :class="[
@@ -16,8 +17,8 @@
         <p class="p-2" v-if="movie.Writer = !'N/A'">Writer: {{ movie.Writer }}</p>
         <p class="p-2">Actors: {{ movie.Actors }}</p>
         <p class="p-2">Genre: {{ movie.Genre }}</p>
-        <p v-if="movie.Country">Country: {{movie.Country}}</p>
-        <p v-if="movie.Awards">Awards: {{movie.Awards}}</p>
+        <p v-if="movie.Country">Country: {{ movie.Country }}</p>
+        <p v-if="movie.Awards">Awards: {{ movie.Awards }}</p>
         <p v-if="!'N/A' || movie.BoxOffice" class="p-2">Boxoffice: {{ movie.BoxOffice }}</p>
         <p class="p-2">Imdb votes: {{ movie.imdbVotes }}</p>
       </article>

@@ -6,7 +6,7 @@
       <button
         class="p-1 shadow-[0px_0px_2px_#000] w-24 mx-auto bg-blue-50 hover:bg-black hover:text-white">Search</button>
         <div v-if="minChars" class="relative">
-          <span class="text-red-600 p-2 absolute top-0 left-0 text-center text-sm">Minimum 3 chars required</span>
+          <span class="text-red-600 p-2 absolute top-0 left-0 text-center text-sm whitespace-nowrap">Minimum 3 characters required</span>
         </div>
     </form>
     <div>
